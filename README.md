@@ -2,8 +2,7 @@
 <img src="https://www.copernicuslac-chile.eu/wp-content/uploads/2024/05/logo_copernicuslac_chile.svg" alt="Copernicus LAC Chile" width="1200"/>
 </p>
 
-# Territorio, ciudad y mar - Módulo de Monitoreo de Costas 
-## ODS 14 con productos CopernicusLAC Chile y datos oficiales de México
+# Territorio, ciudad y mar - Módulo de Monitoreo de Costas: ODS 14 con productos CopernicusLAC Chile y datos oficiales de México
 
 Material práctico del bloque **Monitoreo de Costas** del taller de servicios CopernicusLAC Chile para el monitoreo estratégico en México, coordinado con el Subsistema Nacional de Información Geográfica, Medio Ambiente, Ordenamiento Territorial y Urbano (SNIGMAOTU).
 
