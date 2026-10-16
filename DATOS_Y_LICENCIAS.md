@@ -2,8 +2,8 @@
 
 | Archivo | Contenido | Fuente | Uso |
 |---|---|---|---|
-| `data/sst/CMC_SST_2024MM_*.nc` | Temperatura superficial del mar, compuestos mensuales 2024, grilla 0,02° (L4) | CopernicusLAC Chile, Servicio de Monitoreo de Costas | Material del taller |
-| `data/chl/CMC_CHL_2024MM_*.nc` | Clorofila-a, compuestos mensuales 2024, grilla 0,01° (L4, multisensor) | CopernicusLAC Chile, Servicio de Monitoreo de Costas | Material del taller |
+| `data/sst/CMC_SST_2024MM_*.nc` | Temperatura superficial del mar, compuestos mensuales 2024, grilla 0,02° (L4) | CopernicusLAC Chile, Servicio de Monitoreo de Costas | Material del taller, https://copernicuslac-chile.eu/ |
+| `data/chl/CMC_CHL_2024MM_*.nc` | Clorofila-a, compuestos mensuales 2024, grilla 0,01° (L4, multisensor) | CopernicusLAC Chile, Servicio de Monitoreo de Costas | Material del taller, https://copernicuslac-chile.eu/ |
 | `data/shapes/mexico/anp.gpkg` | 232 Áreas Naturales Protegidas federales, con superficie marina declarada (`S_MARINA`) | CONANP, Información Geoespacial de las ANP (archivo `shp_anp_20260924`), normalizado a EPSG:4326 | Datos públicos de CONANP; citar la fuente |
 | `data/shapes/mexico/zee.gpkg` | Zona Económica Exclusiva de México | Marine Regions / VLIZ, World EEZ v12 (2023-10-25), MRGID 8429 | CC BY 4.0; ver `LICENSE_EEZ_v12.txt`. Cita: Flanders Marine Institute (2023), Maritime Boundaries Geodatabase v12, https://doi.org/10.14284/632. Compilación internacional sin valor legal |
 | `data/shapes/mexico/areas_estudio.gpkg` | Cinco áreas de trabajo (rectángulos docentes) con su POEM de referencia aproximada | Elaboración propia del taller | No son límites oficiales |
