@@ -3,7 +3,7 @@
 </p>
 
 # Territorio, ciudad y mar - Módulo de Monitoreo de Costas 
-##ODS 14 con productos CopernicusLAC Chile y datos oficiales de México
+## ODS 14 con productos CopernicusLAC Chile y datos oficiales de México
 
 Material práctico del bloque **Monitoreo de Costas** del taller de servicios CopernicusLAC Chile para el monitoreo estratégico en México, coordinado con el Subsistema Nacional de Información Geográfica, Medio Ambiente, Ordenamiento Territorial y Urbano (SNIGMAOTU).
 
