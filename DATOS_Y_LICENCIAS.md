@@ -20,8 +20,6 @@ Casi todo viene incluido. Solo falta una capa, que no se puede repartir en el ta
 3. Descarga el ZIP y ponlo, **sin descomprimir**, en la carpeta `data/descargas/` del taller.
 4. Ejecuta la celda del anexo A.2. El notebook extrae México y prepara la capa automáticamente.
 
-Recuerda que las KBA son para uso personal: no las subas al repositorio ni las compartas.
-
 ## Limitaciones principales
 
 - Los NetCDF cubren de 120,1° O a 85,9° O y de 13,8° N a 32,5° N: no toda la ZEE mexicana.
