@@ -1,7 +1,6 @@
 """Funciones del notebook 01_OCEANOS_ODS14_mexico.
 
-Sigue el patrón del módulo LCLU del taller de IDE Chile: la lógica vive aquí, las celdas
-del notebook son cortas y la selección se hace con widgets (con respaldo manual si
+Las celdas del notebook son cortas y la selección se hace con widgets (con respaldo manual si
 ipywidgets no está disponible). El estado compartido se guarda en el diccionario ESTADO.
 """
 from pathlib import Path
