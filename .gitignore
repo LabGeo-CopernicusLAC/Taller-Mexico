@@ -1,0 +1,20 @@
+# Resultados de los grupos (se generan al ejecutar)
+outputs/figures/*
+outputs/tables/*
+!outputs/figures/.gitkeep
+!outputs/tables/.gitkeep
+
+# Datos con licencia que no permite redistribuirlos (los descarga cada persona)
+data/descargas/*
+!data/descargas/.gitkeep
+data/shapes/mexico/kba_mexico.gpkg
+
+# Jupyter y Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
