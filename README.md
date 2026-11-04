@@ -120,7 +120,7 @@ En cada notebook selecciona el kernel **Python (2026coplac)** (arriba a la derec
 Ver [DATOS_Y_LICENCIAS.md](DATOS_Y_LICENCIAS.md).
 
 ## Contacto
-Cualquier duda puedes escribirnos al soporte técnico — tallerXXXXXXXXX2026@copernicuslac-chile.eu
+Cualquier duda puedes escribirnos al soporte técnico — tallerINEGI2026@copernicuslac-chile.eu
 
 Servicios de geomática CopernicusLAC Chile
 labgeo@cmm.uchile.cl
