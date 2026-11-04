@@ -2,18 +2,25 @@
 <img src="https://www.copernicuslac-chile.eu/wp-content/uploads/2024/05/logo_copernicuslac_chile.svg" alt="Copernicus LAC Chile" width="1200"/>
 </p>
 
-# Territorio, ciudad y mar - Módulo de Monitoreo de Costas: ODS 14 con productos CopernicusLAC Chile y datos oficiales de México
+# Territorio, ciudad y mar: Módulo de exploración aplicada de Atlas Urbano y Cobertura y uso de suelo  - Módulo de Monitoreo de Costas
+
+Material práctico del bloque **Atlas Urbano y Cobertura y uso de suelo** de CopernicusLAC Chile  para la generación e interpretación de evidencia territorial.
 
 Material práctico del bloque **Monitoreo de Costas** del taller de servicios CopernicusLAC Chile para el monitoreo estratégico en México, coordinado con el Subsistema Nacional de Información Geográfica, Medio Ambiente, Ordenamiento Territorial y Urbano (SNIGMAOTU).
 
 ## ¿Cuándo se dicta?
 
-| Sesión | Fecha | Horario |
-|---|---|---|
-| Presencial | miércoles 11 de noviembre de 2026 | 13:00 – 15:30 |
+| módulo | Sesión | Fecha | Horario |
+|---|---|---|---|
+| Terrestre | Presencial | miércoles 11 de noviembre de 2026 | 09:30 – 12:30 |
+| Costas    | Presencial | miércoles 11 de noviembre de 2026 | 13:00 – 15:30 |
 
 ## ¿Qué haremos?
 
+### Atlas Urbano y Cobertura y uso de suelo
+Exploraremos cambios temporals de coberturas a partir de los servicios CopernicusLAC-Chile en México entre 2020 y 2024.
+
+### Monitoreo de Costas
 Trabajaremos con la **temperatura superficial del mar (SST)** y la **clorofila-a (CHL)** mensuales de 2024 producidas por CopernicusLAC Chile, y las compararemos con los indicadores del **ODS 14** que publican México (Sistema de Información de los ODS, SIODS, del INEGI) y Naciones Unidas:
 
 - **14.1.1** Eutrofización costera: la clorofila como componente y la serie oficial de la ONU.
