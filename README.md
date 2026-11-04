@@ -18,7 +18,7 @@ Trabajaremos con la **temperatura superficial del mar (SST)** y la **clorofila-a
 
 - **14.1.1** Eutrofización costera: la clorofila como componente y la serie oficial de la ONU.
 - **14.5.1** Cobertura de zonas protegidas: reproduciremos el valor que publica el SIODS.
-- **14.2.1** Enfoques ecosistémicos: contexto ambiental de los programas de ordenamiento ecológico marino.
+
 
 Cada grupo elegirá una de cinco áreas del mar mexicano: Baja California – Pacífico, Golfo de California, Pacífico sur, Golfo de México o Caribe mexicano.
 
@@ -53,7 +53,7 @@ Una vez en la carpeta correcta, ejecutar el siguiente comando:
 
 <!-- Una vez abierto el terminal, ejecutar el siguiente comando: -->
 ```bash
-git clone --recurse-submodules --remote-submodules https://github.com/LabGeo-CopernicusLAC/Taller-IDE-Uruguay.git
+git clone --recurse-submodules --remote-submodules https://github.com/LabGeo-CopernicusLAC/Taller-Mexico.git
 ```
 
 Esto creará una copia local de todos los archivos relevantes, incluyendo los Jupyter Notebooks a ejecutar, códigos auxiliares y datos.

@@ -154,20 +154,20 @@ def cobertura_kba(kba, pa, oecm=None):
     u = gpd.GeoDataFrame({'tipo':['PA_union_OECM']},geometry=[union],crs=CRS_AREA)
     return k.to_crs(4326), inter.to_crs(4326), u.to_crs(4326), float(k.cobertura_pct.mean())
 
-def mapa_capas(capas, titulo, salida, extension=None):
-    fig, ax = plt.subplots(figsize=(10,7))
-    colores = ['#777777','#0570b0','#1b7837','#d95f02','#762a83']
-    for (nombre,g),color in zip(capas.items(),colores):
-        if g.empty or g.geometry.is_empty.all(): continue
-        g.to_crs(4326).plot(ax=ax,facecolor='none',edgecolor=color,linewidth=1,label=nombre)
-    if extension:
-        x0,y0,x1,y1=extension;ax.set_xlim(x0,x1);ax.set_ylim(y0,y1)
-    ax.set(xlabel='Longitud (°)',ylabel='Latitud (°)',title=titulo)
-    # Leyenda explícita para polígonos (GeoPandas no crea handles adecuados).
-    from matplotlib.lines import Line2D
-    ax.legend(handles=[Line2D([0],[0],color=c,label=n) for n,c in zip(capas,colores)])
-    fig.tight_layout(); fig.savefig(salida,dpi=220); plt.show()
-    return fig
+def mapa_raster(da, geometria, titulo, salida, log=False):
+    from matplotlib.colors import LogNorm
+    d = recortar(da, geometria)
+    if not bool(d.notnull().any().compute()):
+        print(titulo, ': sin celdas válidas'); return
+    fig, ax = plt.subplots(figsize=(9,6))
+    escala = {'CHL': (0.03, 30), 'SST': (10, 35)}
+    variable = 'CHL' if log else 'SST'
+    vmin, vmax = escala[variable]
+    norm = LogNorm(vmin=vmin, vmax=vmax) if log else None
+    d.plot(ax=ax, cmap='viridis' if log else 'turbo', norm=norm, vmin=None if log else vmin, vmax=None if log else vmax,
+           cbar_kwargs={'label': 'Clorofila-a (mg m⁻³)' if log else 'SST (°C)'})
+    gpd.GeoSeries([geometria], crs=4326).boundary.plot(ax=ax, color='black')
+    ax.set_title(titulo); fig.tight_layout(); fig.savefig(salida, dpi=220); plt.show()
 
 def mapa_raster(da, geometria, titulo, salida, log=False):
     from matplotlib.colors import LogNorm

@@ -5,7 +5,7 @@ ipywidgets no está disponible). El estado compartido se guarda en el diccionari
 """
 from pathlib import Path
 import json
-
+import rioxarray
 from herramientas import *  # noqa: F401,F403  (numpy, pandas, geopandas, xarray, plt, funciones base)
 from IPython.display import display, clear_output, HTML
 
@@ -282,10 +282,10 @@ def run_series_14_1_1():
     fig.suptitle(f"Ciclo anual 2024 · área {ESTADO['id_area']}"); fig.tight_layout(); fig.savefig(ESTADO['FIG'] / '03_series.png', dpi=200); plt.show()
     chlconc = rc[['fecha', 'media', 'mediana', 'cobertura_pct']].rename(columns={'media': 'media_mg_m3', 'mediana': 'mediana_mg_m3'})
     chlconc['media_mg_L'] = chlconc.media_mg_m3 / 1000
-    chlconc.to_csv(ESTADO['TAB'] / '03_EN_MAR_CHLCONC_componente.csv', index=False)
+    chlconc.to_csv(ESTADO['TAB'] / '03_concentracion_CHL_2024.csv', index=False)
     ESTADO['CHL_ANUAL'] = float(rc['media'].mean())
     print(f"CHL media 2024 (media de 12 meses): {ESTADO['CHL_ANUAL']:.3f} mg m⁻³ = {ESTADO['CHL_ANUAL'] / 1000:.6f} mg L⁻¹")
-    print(f'Cobertura mínima del campo: {rc.cobertura_pct.min():.1f} % · producto L4: puede incluir relleno')
+    print(f'Cobertura espacial mínima de CHL: {rc.cobertura_pct.min():.1f} %')
     return ESTADO['series']
 
 
@@ -302,7 +302,7 @@ def run_4km():
     t = pd.Timestamp(ESTADO['mes'])
     fina = recortar(ESTADO['chl'], ESTADO['region']).sel(time=t)
     gruesa = chl4.sel(time=t)
-    vmin, vmax = float(fina.quantile(0.02)), float(fina.quantile(0.98))
+    vmin, vmax = 0.03, 30
     fig, axes = plt.subplots(1, 2, figsize=(13, 5), sharex=True, sharey=True)
     for ax, d, titulo in [(axes[0], fina, '~1 km (CopernicusLAC)'), (axes[1], gruesa, '4 km (grilla OC-CCI)')]:
         d.plot(ax=ax, cmap='viridis', norm=LogNorm(vmin=vmin, vmax=vmax), add_colorbar=(ax is axes[1]))
@@ -310,17 +310,20 @@ def run_4km():
     fig.tight_layout(); fig.savefig(ESTADO['FIG'] / f"03_CHL_1km_vs_4km_{ESTADO['mes']}.png", dpi=200); plt.show()
     return comp
 
-
 def show_referencia_onu_14_1_1():
     ref = ESTADO['ref']
-    dev = ref[ref.serie == 'EN_MAR_CHLDEV']
+    dev = ref[ref.serie == 'EN_MAR_CHLDEV'].sort_values('anio')
     anm = ref[ref.serie == 'EN_MAR_CHLANM'].pivot(index='anio', columns='desglose', values='valor')
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4))
-    axes[0].plot(dev.anio, dev.valor, marker='o'); axes[0].set(title='EN_MAR_CHLDEV · México', ylabel='%', xlabel='año')
-    anm.plot(kind='bar', ax=axes[1]); axes[1].set(title='EN_MAR_CHLANM · México por frecuencia', ylabel='%', xlabel='año')
+    fig, axes = plt.subplots(1, 2, figsize=(13, 4))
+    axes[0].plot(dev.anio, dev.valor, marker='o')
+    axes[0].set(title='Superficie marina con aumentos inusuales de clorofila', ylabel='Superficie (%)', xlabel='Año')
+    anm.plot(kind='bar', ax=axes[1])
+    axes[1].set(title='Frecuencia de anomalías de clorofila', ylabel='Superficie (%)', xlabel='Año')
+    axes[1].legend(title='Categoría', fontsize=8)
+    fig.suptitle('México · Indicador ODS 14.1.1 · Referencia global ONU')
     fig.tight_layout(); fig.savefig(ESTADO['FIG'] / '03_referencia_ONU_14_1_1.png', dpi=200); plt.show()
-    print('Último valor CHLDEV:', int(dev.anio.max()), '→', round(float(dev.loc[dev.anio.idxmax(), 'valor']), 2), '%')
-
+    ultimo = dev.iloc[-1]
+    print(f"Último año disponible: {int(ultimo.anio)} · Superficie con aumentos inusuales de CHL: {ultimo.valor:.2f} %")
 
 # ---------------------------------------------------------------------------
 # Parte 4 — ODS 14.5.1
@@ -339,13 +342,11 @@ def run_reproduccion_siods():
     ESTADO['geo_nacional'] = cobertura_geometrica(ESTADO['anp'], ESTADO['zee'])
     display(comp[['anio', 'SIODS_ha', 'S_MARINA_ha', 'diferencia_ha', 'SIODS_pct']].tail(10).rename(columns={'anio': 'año'}))
     print('Diferencia máxima del numerador:', round(comp.diferencia_ha.abs().max(), 1), 'ha')
-    print(f"ZEE implícita en el SIODS: {ESTADO['ZEE_SIODS_KM2']:,.0f} km² (constante en toda la serie)")
+    print(f"Superficie marina de referencia estimada a partir del SIODS: {ESTADO['ZEE_SIODS_KM2']:,.0f} km²")
     fig, ax = plt.subplots(figsize=(10, 4))
     ax.plot(comp.anio, comp.S_MARINA_ha / 100 / ESTADO['ZEE_SIODS_KM2'] * 100, lw=3, alpha=.5, label='reproducido (CONANP / ZEE implícita)')
     ax.plot(siods_pct.anio, siods_pct.SIODS_pct, marker='o', ms=3, label='publicado SIODS (INEGI)')
-    mpa = ref[ref.serie == 'ER_MRN_MPA']; ax.plot(mpa.anio, mpa.valor, ls='--', label='ONU ER_MRN_MPA (método KBA)')
-    ax.axhline(10, color='grey', lw=.8); ax.text(1994, 11, 'meta 14.5: 10 %', color='grey')
-    ax.set(ylabel='%', title='ODS 14.5.1 · México'); ax.legend(); fig.tight_layout()
+    ax.set(ylabel='Superficie marina protegida (%)', xlabel='Año', title='Evolución de la cobertura marina protegida · México'); ax.legend(); fig.tight_layout()
     fig.savefig(ESTADO['FIG'] / '04_serie_14_5_1.png', dpi=200); plt.show()
     return comp
 
@@ -357,7 +358,7 @@ def calcular_14_5_1(numerador_km2, denominador_km2):
     global_ = float(ref[(ref.serie == 'ER_MRN_MPA') & (ref.anio == 2024)].valor.iloc[0])
     print(f'Resultado: {numerador_km2:,.0f} / {denominador_km2:,.0f} km² = {pct:.2f} %')
     print(f'SIODS 2024 (oficial nacional): {oficial:.2f} % · diferencia {pct - oficial:+.2f} puntos')
-    print(f'ONU ER_MRN_MPA 2024 (método KBA, otra pregunta): {global_:.2f} %')
+    print(f'Referencia global ONU 2024 (otra metodología): {global_:.2f} %')
     ESTADO['calculo_14_5_1'] = {'numerador_km2': numerador_km2, 'denominador_km2': denominador_km2, 'pct': pct}
     return pct
 
@@ -419,7 +420,10 @@ def run_categorias_y_area():
     if filas:
         ctx = pd.concat(filas, ignore_index=True)
         ctx.to_csv(ESTADO['TAB'] / '04_contexto_SST_CHL_ANP.csv', index=False)
-        display(ctx.groupby(['variable', 'clase'])['media'].agg(['mean', 'min', 'max']).round(3))
+        tabla = ctx.groupby(['variable', 'clase'])['media'].agg(['mean', 'min', 'max']).round(3)
+        tabla = tabla.rename(columns={'mean': 'Media 2024', 'min': 'Mínimo mensual', 'max': 'Máximo mensual'})
+        display(tabla)
+        print('Unidades: SST en °C y CHL en mg m⁻³')
     print('Una diferencia dentro/fuera describe ubicación (costa, profundidad), no efecto de la protección.')
     return cat
 
@@ -442,41 +446,46 @@ def run_14_2_1():
     display(estac.round(3))
     return estac
 
+def exportar_capas_qgis():
+    salida = ESTADO['BASE'] / 'outputs/qgis' / ESTADO['grupo']
+    salida.mkdir(parents=True, exist_ok=True)
+    fecha = pd.Timestamp(ESTADO['mes'])
+    for nombre, da in [('SST', ESTADO['sst']), ('CHL', ESTADO['chl'])]:
+        d = recortar(da.sel(time=fecha), ESTADO['region']).rename({'lon': 'x', 'lat': 'y'})
+        d = d.fillna(-9999).rio.write_crs('EPSG:4326').rio.write_nodata(-9999)
+        d.rio.to_raster(salida / f'{nombre}_{fecha:%Y_%m}.tif', compress='LZW')
+    gpd.GeoDataFrame({'area': [ESTADO['nombre_area']]}, geometry=[ESTADO['region']], crs=4326).to_file(salida / 'area_estudio.gpkg', driver='GPKG')
+    anp = ESTADO['anp_marinas'][ESTADO['anp_marinas'].intersects(ESTADO['region'])].copy()
+    if not anp.empty: anp.to_file(salida / 'anp_marinas.gpkg', driver='GPKG')
+    print(f'✅ Capas exportadas para QGIS: {salida.relative_to(ESTADO["BASE"])}')
+
 
 def exportar_ficha(interpretacion=''):
-    ref = ESTADO['ref']
-    v = lambda s, y: float(ref[(ref.serie == s) & (ref.anio == y)].valor.iloc[0])
-    geo, ven = ESTADO['geo_nacional'], ESTADO['ven']
-    ficha = pd.DataFrame([
-        {'ODS': '14.1.1', 'serie': 'EN_MAR_CHLDEV', 'valor_oficial': f"{v('EN_MAR_CHLDEV', 2022):.2f} % (2022)", 'fuente_oficial': 'ONU, nivel 1 global',
-         'resultado_grupo': 'no calculable: otro producto y sin referencia 2000–2004', 'tipo': 'indicador oficial'},
-        {'ODS': '14.1.1', 'serie': 'EN_MAR_CHLCONC', 'valor_oficial': 'sin dato nacional', 'fuente_oficial': 'SIODS no publica 14.1.1',
-         'resultado_grupo': f"{ESTADO['CHL_ANUAL']:.3f} mg m⁻³ ({ESTADO['CHL_ANUAL'] / 1000:.6f} mg L⁻¹), área {ESTADO['id_area']}, 2024",
-         'tipo': 'componente; estimación CopernicusLAC no validada'},
-        {'ODS': '14.2.1', 'serie': 'EN_SCP_ECSYBA', 'valor_oficial': '1 (sí), cuatro POEM', 'fuente_oficial': 'ONU; SIODS no lo publica',
-         'resultado_grupo': f"contexto ambiental de {ESTADO['poem']}", 'tipo': 'contexto; no entra en el cálculo'},
-        {'ODS': '14.5.1', 'serie': 'SIODS nacional', 'valor_oficial': f"{v('SIODS_14.5.1_pct', 2024):.2f} % (2024)", 'fuente_oficial': 'SIODS-INEGI (SEMARNAT)',
-         'resultado_grupo': f"numerador CONANP reproducido (±0,4 ha); geometría ∩ ZEE Marine Regions = {geo['cobertura_pct']:.2f} %",
-         'tipo': 'reproducción del método nacional'},
-        {'ODS': '14.5.1', 'serie': 'ER_MRN_MPA', 'valor_oficial': f"{v('ER_MRN_MPA', 2024):.2f} % (2024)", 'fuente_oficial': 'ONU (BirdLife, IUCN, UNEP-WCMC)',
-         'resultado_grupo': 'no reproducido: falta clasificación Marine KBA y OECM', 'tipo': 'indicador oficial global'},
-        {'ODS': '14.5.1', 'serie': 'cobertura en el área', 'valor_oficial': '—', 'fuente_oficial': '—',
-         'resultado_grupo': f"{ven['cobertura_pct']:.1f} % de la ZEE del área {ESTADO['id_area']}", 'tipo': 'desagregación docente'}])
-    tab = ESTADO['TAB']
-    ficha.to_csv(tab / '05_ficha_ODS14.csv', index=False)
-    with pd.ExcelWriter(tab / '05_ficha_ODS14.xlsx') as w:
+    ref, tab = ESTADO['ref'], ESTADO['TAB']
+    filas = [{'Resultado': 'Área de estudio', 'Valor': ESTADO['nombre_area'], 'Fuente': 'Selección del grupo'}]
+    dev = ref[ref.serie == 'EN_MAR_CHLDEV'].sort_values('anio')
+    if not dev.empty:
+        r = dev.iloc[-1]
+        filas.append({'Resultado': 'Superficie con aumentos inusuales de CHL', 'Valor': f'{r.valor:.2f} % ({int(r.anio)})', 'Fuente': 'ONU, referencia global'})
+    if 'CHL_ANUAL' in ESTADO:
+        filas.append({'Resultado': 'Concentración media de CHL, 2024', 'Valor': f"{ESTADO['CHL_ANUAL']:.3f} mg m⁻³", 'Fuente': 'CopernicusLAC, área seleccionada'})
+    if 'calculo_14_5_1' in ESTADO:
+        filas.append({'Resultado': 'Cobertura marina calculada', 'Valor': f"{ESTADO['calculo_14_5_1']['pct']:.2f} %", 'Fuente': 'Cálculo del grupo'})
+    if 'ven' in ESTADO:
+        filas.append({'Resultado': 'Cobertura protegida en el área', 'Valor': f"{ESTADO['ven']['cobertura_pct']:.2f} %", 'Fuente': 'ANP y ZEE, cálculo geométrico'})
+    ficha = pd.DataFrame(filas)
+    ficha.to_csv(tab / '05_ficha_ODS14.csv', index=False, encoding='utf-8-sig')
+    with pd.ExcelWriter(tab / '05_resultados_taller.xlsx') as w:
         ficha.to_excel(w, sheet_name='Ficha', index=False)
-        ESTADO['series'].to_excel(w, sheet_name='SST_CHL_2024', index=False)
-        ESTADO['cat'].to_excel(w, sheet_name='14.5.1_categorias', index=False)
-        if 'comp_4km' in ESTADO:
-            ESTADO['comp_4km'].to_excel(w, sheet_name='CHL_1km_vs_4km', index=False)
+        for clave, hoja in [('series', 'SST_CHL_2024'), ('comp_4km', 'CHL_1km_vs_4km'), ('cat', 'ANP_categorias')]:
+            if clave in ESTADO: ESTADO[clave].to_excel(w, sheet_name=hoja, index=False)
     (tab / '05_interpretacion.md').write_text(interpretacion, encoding='utf-8')
-    (tab / 'trazabilidad.json').write_text(json.dumps({'grupo': ESTADO['grupo'], 'id_area': ESTADO['id_area'], 'area': ESTADO['nombre_area'],
-        'mes_mapa': ESTADO['mes'], 'netcdf': [p.name for p in sorted((ESTADO['BASE'] / 'data').rglob('*.nc'))],
-        'referencias': 'data/ods/referencias_oficiales_ods14.csv'}, ensure_ascii=False, indent=2))
+    (tab / 'trazabilidad.json').write_text(json.dumps({'grupo': ESTADO['grupo'], 'area': ESTADO['nombre_area'],
+        'mes': ESTADO['mes'], 'archivos': [p.name for p in sorted((ESTADO['BASE'] / 'data').rglob('*.nc'))]}, ensure_ascii=False, indent=2))
     display(ficha)
-    print('Salidas en', tab.relative_to(ESTADO['BASE']), 'y', ESTADO['FIG'].relative_to(ESTADO['BASE']))
+    print(f'✅ Resultados exportados: {tab.relative_to(ESTADO["BASE"])}')
     return ficha
+
 
 
 # ---------------------------------------------------------------------------
