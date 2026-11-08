@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.conabio.gob.mx/informacion/gis/schemas/fgdc/fgdc-std-001-1998.xsd">
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <origin>CONABIO, (07/2017). 'Cuencas Hidrográficas de México, 2007', escala: 1:250000. edición: Julio 2017. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad. Ciudad de México, México. </origin>
+                <pubdate>20170706</pubdate>
+                <title>Cuencas Hidrográficas de México 2007, modificado para el geoportal del SNIB</title>
+                <geoform>Shapefile. Formato vectorial compuesto por 4 archivos (shp, shx, dbf,prj)</geoform>
+                <othercit>250000</othercit>
+                <onlink>http://www.conabio.gob.mx/informacion/metadata/gis/cuencasmx.xml?_httpcache=yes&amp;_xsl=/db/metadata/xsl/fgdc_html.xsl&amp;_indent=no</onlink>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>El mapa cuenta con los límites de las cuencas hidrográficas de México que fueron definidas por INEGI, INE y CONAGUA.</abstract>
+            <purpose>Tener las cuencas hidrográficas de México como referencia para extraer información del geoportal del SNIB.</purpose>
+        </descript>
+        <timeperd>
+            <timeinfo>
+                <sngdate>
+                    <caldate>00000000</caldate>
+                </sngdate>
+            </timeinfo>
+            <current>Junio 2017</current>
+        </timeperd>
+        <status>
+            <progress>Complete</progress>
+            <update>No planeado</update>
+        </status>
+        <spdom>
+            <bounding>
+                <westbc>-117.124268879605</westbc>
+                <eastbc>-86.7405401996704</eastbc>
+                <northbc>32.7186535710056</northbc>
+                <southbc>14.5320983703436</southbc>
+            </bounding>
+        </spdom>
+        <keywords>
+            <theme>
+                <themekt>CNB.ACCESO</themekt>
+                <themekey>publico</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB.LICENCIA</themekt>
+                <themekey>CC_BY_NC_2.5_MX</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB.VISIBILIDAD</themekt>
+                <themekey>0</themekey>
+                <themekey>10</themekey>
+            </theme>
+            <theme>
+                <themekt>ESTRUCTURA</themekt>
+                <themekey>noclas</themekey>
+                <themekey>geoportal</themekey>
+                <themekey>cuencasmx</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB.ESCALA</themekt>
+                <themekey>250000</themekey>
+            </theme>
+            <theme>
+                <themekt>CONABIO</themekt>
+                <themekey>2007</themekey>
+                <themekey>Cuenca</themekey>
+                <themekey>Hidrográficas</themekey>
+                <themekey>México</themekey>
+                <themekey>Regionalización</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:LICENCE</themekt>
+                <themekey>bync25mx</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:STATUS</themekt>
+                <themekey>terminado</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:DATATYPE</themekt>
+                <themekey>dataset</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:ACCESS</themekt>
+                <themekey>publico</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:IDENTIFIER</themekt>
+                <themekey>cuencasmx</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:KEYWORDS</themekt>
+                <themekey>noclas,geoportal</themekey>
+            </theme>
+            <theme>
+                <themekt>CNB2:THEME:AUTHOR</themekt>
+                <themekey>CONABIO, (07/2017). 'Cuencas Hidrográficas de México, 2007', escala: 1:250000. edición: Julio 2017. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad. Ciudad de México, México. </themekey>
+            </theme>
+            <place>
+                <placekt>CONABIO</placekt>
+                <placekey>Nacional</placekey>
+            </place>
+            <place>
+                <placekt>CNB2:PLACE:BOX</placekt>
+                <placekey>northlimit=32.7186535710056; eastlimit=-86.7405401996704; southlimit=14.5320983703436; westlimit=-117.124268879605; uplimit=0; units=signed decimal degrees; zunits=metres; projection=EPSG:4326</placekey>
+            </place>
+            <temporal>
+                <tempkt>CNB2:DATE:PUBLISHED</tempkt>
+                <tempkey>2017-07-06</tempkey>
+            </temporal>
+            <temporal>
+                <tempkt>CNB2:DATE:UPDATED</tempkt>
+                <tempkey>2017-07-06</tempkey>
+            </temporal>
+        </keywords>
+        <accconst>Sin restricciones</accconst>
+        <useconst>No se permite utilizar estos datos con fines lucrativos y se debe citar la fuente del mapa y a la CONABIO. Ver la licencia completa en http://creativecommons.org/licenses/by-nc/2.5/mx/</useconst>
+        <browse>
+            <browsen>http://geoportal.conabio.gob.mx/descargas/mapas/imagen/20/cuencasmx</browsen>
+            <browsed>171 x 132 píxeles</browsed>
+            <browset>image/png</browset>
+        </browse>
+        <browse>
+            <browsen>http://geoportal.conabio.gob.mx/descargas/mapas/imagen/96/cuencasmx</browsen>
+            <browsed>1002 x 774 píxeles</browsed>
+            <browset>image/png</browset>
+        </browse>
+        <native>Arc Map 10.3, Windows</native>
+    </idinfo>
+    <dataqual>
+        <logic>Gabinete</logic>
+        <complete>Del mapa de cuencas hidrográficas 2007 elaborado por INEGI, INE y CONAGUA, se igualó la línea de costa con la del mapa de estados en las zonas en donde no había entradas de bahías, esteros y lagunas costeras.</complete>
+        <lineage>
+            <srcinfo>
+                <srccite>
+                    <citeinfo>
+                        <origin>No conocido</origin>
+                        <pubdate>00000000</pubdate>
+                        <title>No conocido</title>
+                        <geoform>No conocido</geoform>
+                    </citeinfo>
+                </srccite>
+                <srcscale>250000</srcscale>
+                <typesrc>Digital</typesrc>
+                <srctime>
+                    <timeinfo>
+                        <sngdate>
+                            <caldate>00000000</caldate>
+                        </sngdate>
+                    </timeinfo>
+                    <srccurr>No conocido</srccurr>
+                </srctime>
+                <srccitea>No conocido</srccitea>
+                <srccontr>INEGI - INE - CONAGUA, (2007), 'Cuencas Hidrográficas de México, 2007', Escala 1:250000. Instituto Nacional de Estadística Geografía e Informática , Instituto Nacional de Ecología, Comisión Nacional de Agua, http://www.conabio.gob.mx/informacion/gis/?vns=gis_root/hidro/chidro/cue250k_07gw, México, D.F..</srccontr>
+            </srcinfo>
+            <procstep>
+                <procdesc>1. Con las herramientas de edición del ArcMap 10.3 se sustituyó la línea de costa del mapa original por la del mapa de estados del año 2016 solamente en las zonas en donde no había entradas de bahías, esteros y lagunas costeras. 2. Se incluyó la isla Holbox y las aledañas a la cuenca de la península de Yucatán y posteriormente quedaron integrados en un solo registro con la herramienta Disolver. 3. Se validó la topología con la finalidad de encontrar huecos o sobreposición de polígonos. 4. Finalmente se agregaron los campos como la cita, etiqueta, numpoligon y para los fines de visualización y un identificador específico para fines de extracción de datos del geoportal de la Conabio.</procdesc>
+                <procdate>00000000</procdate>
+            </procstep>
+        </lineage>
+    </dataqual>
+    <spdoinfo>
+        <direct>Vector</direct>
+        <ptvctinf>
+            <sdtsterm>
+                <sdtstype>G-polygon</sdtstype>
+                <ptvctcnt>1458</ptvctcnt>
+            </sdtsterm>
+        </ptvctinf>
+    </spdoinfo>
+    <spref>
+        <horizsys>
+            <geograph>
+                <latres>0.0174532925199433</latres>
+                <longres>0.0174532925199433</longres>
+                <geogunit>Decimal degrees</geogunit>
+            </geograph>
+            <geodetic>
+                <horizdn>WGS84</horizdn>
+                <ellips>WGS84</ellips>
+                <semiaxis>6378137.000000</semiaxis>
+                <denflat>298.257224</denflat>
+            </geodetic>
+        </horizsys>
+    </spref>
+    <eainfo>
+        <detailed>
+            <enttyp>
+                <enttypl>CUENCASMX.DBF</enttypl>
+                <enttypd>La tabla describe las características individuales de cada cuenca</enttypd>
+                <enttypds>No conocido</enttypds>
+            </enttyp>
+            <attr>
+                <attrlabl>Codigo</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Codificación semiautomatizada para cada ceunca, con fines de individualización o identificación</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Toponimo</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Nombre geográfico de cada cuenca a partir de la aplicación del esquema toponímico diseñado para este fin</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Edo_cuen</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Nombre de los estados a los que pertenecen las cuencas.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Tipo_cuen</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Tipo de cuenca según su desembocadura, pudiendo ser de tipo endorreico, arreico, exorreico.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Alt_max</attrlabl>
+                <attrdef>Numérico</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Altura máxima en metros sobre el nivel del mar que registra cada cuenca.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>Metros</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Alt_min</attrlabl>
+                <attrdef>Numérico</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Altura mínima en metros sobre el nivel del mar que registra cada cuenca.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>Metros</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Dif_alt</attrlabl>
+                <attrdef>Numérico</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Desnivel que presenta cada una de las cuencas y resulta de la diferencia de la altura mínima y máxima de cada cuenca.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>Metros</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Reg_hid</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Nombre de la Región Hidrológica a la que pertenecen las cuencas.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Sub_hid</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Nombre de la subregión hidrológica a la que pertenecen las cuencas.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>Tipo_dren</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>INEGI-INE-CONAGUA</attrdefs>
+                <attrdomv>
+                    <udom>Tipo de patrón de drenaje dominante (aunque pueden presentar uno o más tipos de patrón).Dicha clasificación se obtuvo a partir de la observación de las corrientes superficiales de manera visual.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>COV_ID</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>CONABIO</attrdefs>
+                <attrdomv>
+                    <udom>Identificador único numérico que corresponde al valor del campo CODIGO.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>NUMPOLIGON</attrlabl>
+                <attrdef>Numérico</attrdef>
+                <attrdefs>CONABIO</attrdefs>
+                <attrdomv>
+                    <udom>Número de polígonos asociados a cada cuenca.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>ETIQUETA</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>CONABIO</attrdefs>
+                <attrdomv>
+                    <udom>Identificación de la cuenca hidrográfica a partir del campo CODIGO más el campo TOPONIMO, este campo es utilizado para identificar la entidad en el geoportal.</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+            <attr>
+                <attrlabl>CITA</attrlabl>
+                <attrdef>Carácter</attrdef>
+                <attrdefs>CONABIO</attrdefs>
+                <attrdomv>
+                    <udom>cita del mapa de cuencas</udom>
+                </attrdomv>
+                <attrvai>
+                    <attrva>1</attrva>
+                    <attrvae>No aplica</attrvae>
+                </attrvai>
+            </attr>
+        </detailed>
+    </eainfo>
+    <distinfo>
+        <distrib>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>CONABIO</cntorg>
+                    <cntper>Jose Manuel Davila Rosas</cntper>
+                </cntorgp>
+                <cntpos>Subcoordinador de Sistemas de Información Geográfica</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical address</addrtype>
+                    <address>Liga Periférico Insurgentes Sur Num. 4903 1er piso. Col. Parques del Pedregal. Delg. Tlalpan</address>
+                    <city>Ciudad de México</city>
+                    <state>D.F.</state>
+                    <postal>14010</postal>
+                    <country>México</country>
+                </cntaddr>
+                <cntvoice>50045012</cntvoice>
+                <cntfax>50044931</cntfax>
+                <cntemail>jdavila@conabio.gob.mx</cntemail>
+                <hours>Lunes a Viernes de 8 a 18 hrs.</hours>
+            </cntinfo>
+        </distrib>
+        <resdesc>cuencasmx</resdesc>
+        <distliab>La Comisión Nacional para el Conocimiento y Uso de la Biodiversidad (CONABIO) solo se hace responsable de la información presentada en el mapa y se deslinda del uso que se le de a la misma.</distliab>
+        <stdorder>
+            <digform>
+                <digtinfo>
+                    <formname>CNB.GEO.TMS</formname>
+                    <formvern>1.0.0</formvern>
+                    <formspec>PNG</formspec>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>http://wms0.conabio.gob.mx/cuencasmx.py/</networkr>
+                                <networkr>http://wms1.conabio.gob.mx/cuencasmx.py/</networkr>
+                                <networkr>http://wms2.conabio.gob.mx/cuencasmx.py/</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Metadato (HTML)</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>describedby canonical</formspec>
+                    <formcont>text/html</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>metadatos/doc/html/cuencasmx.html</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Metadato (XML)</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>describedby alternate</formspec>
+                    <formcont>text/xml</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>metadatos/doc/fgdc/cuencasmx.xml</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Acceso directo al mapa</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>bookmark</formspec>
+                    <formcont>text/html</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>?vns=cuencasmx</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Vista previa</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>preview</formspec>
+                    <formcont>image/png</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>descargas/mapas/imagen/96/cuencasmx</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Vista previa</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>icon</formspec>
+                    <formcont>image/png</formcont>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>descargas/mapas/imagen/20/cuencasmx</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Licencia</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>license</formspec>
+                    <formcont>text/html</formcont>
+                    <filedec>cnb:external</filedec>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>http://creativecommons.org/licenses/by-nc/2.5/mx/</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>ESRI Shapefile (SHP)</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>related archives</formspec>
+                    <formcont>application/zip</formcont>
+                    <filedec>cnb:external</filedec>
+                    <transize>9.52</transize>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>http://www.conabio.gob.mx/informacion/gis/maps/geo/cuencasmx.zip</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <digform>
+                <digtinfo>
+                    <formname>Google Earth (KML)</formname>
+                    <formvern>CNB2:LINK</formvern>
+                    <formspec>related archives</formspec>
+                    <formcont>application/vnd.google-earth.kmz</formcont>
+                    <filedec>cnb:external</filedec>
+                </digtinfo>
+                <digtopt>
+                    <onlinopt>
+                        <computer>
+                            <networka>
+                                <networkr>http://www.conabio.gob.mx/informacion/gis/maps/kmz/cuencasmx.kmz</networkr>
+                            </networka>
+                        </computer>
+                    </onlinopt>
+                </digtopt>
+            </digform>
+            <fees>Acceso libre sin ningún cargo al público en general.</fees>
+        </stdorder>
+        <techpreq>Tener sistemas compatibles con archivos Shapefile, en caso que existan se pueden visualizar en Google Earth KML y/o conexión al servicio WMS.</techpreq>
+    </distinfo>
+    <metainfo>
+        <metd>20170706</metd>
+        <metc>
+            <cntinfo>
+                <cntorgp>
+                    <cntorg>CONABIO</cntorg>
+                    <cntper>Alejandra Nuñez</cntper>
+                </cntorgp>
+                <cntpos>Administrador de Metadatos</cntpos>
+                <cntaddr>
+                    <addrtype>mailing and physical address</addrtype>
+                    <address>Liga Periférico Insurgentes Sur Num. 4903 1er piso. Col. Parques del Pedregal. Delg. Tlalpan</address>
+                    <city>Ciudad de México</city>
+                    <state>D.F.</state>
+                    <postal>14010</postal>
+                    <country>México</country>
+                </cntaddr>
+                <cntvoice>01 55 5004 4963</cntvoice>
+                <cntfax>50044931</cntfax>
+                <cntemail>ssig@conabio.gob.mx</cntemail>
+                <hours>Lunes a Viernes de 8 a 18 hrs.</hours>
+            </cntinfo>
+        </metc>
+        <metstdn>FGDC Content Standards for Digital Geospatial Metadata, 1998</metstdn>
+        <metstdv>FGDC-STD-001-1998 version 2.0</metstdv>
+    </metainfo>
+</metadata>
